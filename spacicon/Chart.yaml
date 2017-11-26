@@ -1,0 +1,12 @@
+apiVersion: v1
+description: 👽 Procedurally generated space-themed avatars
+name: spacicon
+version: 1.0.0
+home: https://github.com/martin-helmich/spacicon
+sources:
+  - git://github.com/martin-helmich/spacicon.git
+maintainers:
+  - name: Martin Helmich
+    email: kontakt@martin-helmich.de
+    url: https://github.com/martin-helmich
+appVersion: 1.0.0-beta1

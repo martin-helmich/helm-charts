@@ -1,0 +1,54 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: {{ template "spacicon.fullname" . }}
+  labels:
+    app: {{ template "spacicon.name" . }}
+    chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  template:
+    metadata:
+      labels:
+        app: {{ template "spacicon.name" . }}
+        release: {{ .Release.Name }}
+        {{ template "spacicon.redis.fullname" . }}-client: "true"
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - containerPort: {{ .Values.service.internalPort }}
+          env:
+            - name: CACHE_TYPE
+              value: redis
+            - name: CACHE_REDIS_HOST
+              value: {{ template "spacicon.redis.fullname" . }}
+            - name: CACHE_REDIS_PORT
+              value: "6379"
+            - name: CACHE_REDIS_DB
+              value: {{ default 1 .Values.redis.database | quote }}
+            {{- if .Values.redis.usePassword }}
+            - name: CACHE_REDIS_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: {{ template "spacicon.redis.fullname" . }}
+                  key: redis-password
+            {{- end }}
+          #livenessProbe:
+          #  httpGet:
+          #    path: /
+          #    port: {{ .Values.service.internalPort }}
+          #readinessProbe:
+          #  httpGet:
+          #    path: /
+          #    port: {{ .Values.service.internalPort }}
+          resources:
+{{ toYaml .Values.resources | indent 12 }}
+    {{- if .Values.nodeSelector }}
+      nodeSelector:
+{{ toYaml .Values.nodeSelector | indent 8 }}
+    {{- end }}
