@@ -1,0 +1,34 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+apiVersion: v1
+appVersion: 1.0.0-beta1
+description: "\U0001F47D Procedurally generated space-themed avatars"
+home: https://github.com/martin-helmich/spacicon
+maintainers:
+- - email: kontakt@martin-helmich.de
+  name: Martin Helmich
+name: spacicon
+sources:
+- - git://github.com/martin-helmich/spacicon.git
+version: 1.0.0
+
+...
+files:
+  spacicon-1.0.0.tgz: sha256:68a23f73717aa2124ff5e91a054d501676a639ba1a0b714c5b7fe25327a623bc
+-----BEGIN PGP SIGNATURE-----
+
+wsFcBAEBCgAQBQJaGvomCRBgt83nLJE3lQAAo+AQAHOmUqItagWXgwHHWzuLPBP6
+ngf2xdag90hcEKl0lmJLmmQitg6tsYw/M93xVvTxk88v5XIs2BACHGzv1KPYE1L4
+UmWIGmCJUJg2KZzc8bY3OP563SdjfkwFBhHpxEke3ErheSEaF6OsLWlERoSckAID
+Z6dwNLl2o7cG8DogBHpoTnEKp0DxVCRAE66O/TcehiQjiSzajacCiooGjWY4xUvr
+cWzoTc7vHORsc86pmo7ZnrBBBixdGy+8T1NFmyHELbAaiDbBsRhLZv9rsr/yUc+M
+O9Fkk4QLRDchwl90IMOVSbhrW/t71vCd7EGyI6ReFBo9lvdVB2l6PeFN1cLd/Fsv
+r2jYezA+7DYJXCYwkPwmaENSRBpzcsvvsD5M0orq4SYE2PA5kgVrzVDNY9hGhwOw
+Foj7UCb/WHwUkC87MzKR8puP+dEF3Ph9vJ61EWH984qoxOhr5SrAOZty7s7fdVS6
+NEm0MBQhtRfHY5Ksz9i6yVNnAwfvyMqgFvvnU6EjDJa90OLu5Gtuirz2qLsMkM90
+01VaHYB28FyKiKhBQoOXCv55b7WKJnT9Ui2fZPx3Au3/NWHTAA9aW/43HAVRn4KA
+Svp6ASszfl+9ZAw8j4ch2+jKTV1czcmUDe18LcTd4AwXrYKs7x7F1QUfCanFGU/3
+OTkhstsQH/1EaX2Qop/z
+=J1eM
+-----END PGP SIGNATURE-----
