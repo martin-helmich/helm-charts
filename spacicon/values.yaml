@@ -37,8 +37,11 @@ resources: {}
   #  memory: 128Mi
 
 redis:
-  persistence:
+  cluster:
     enabled: false
+  master:
+    persistence:
+      enabled: false
   networkPolicy:
     enabled: true
     allowExternal: false
