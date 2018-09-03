@@ -26,7 +26,7 @@ spec:
             - name: CACHE_TYPE
               value: redis
             - name: CACHE_REDIS_HOST
-              value: {{ template "spacicon.redis.fullname" . }}
+              value: {{ template "spacicon.redis.fullname" . }}-master
             - name: CACHE_REDIS_PORT
               value: "6379"
             - name: CACHE_REDIS_DB
